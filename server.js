@@ -5,15 +5,27 @@ const cors = require ('cors');
 require('dotenv').config();
 
 const app = express();
+
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+       'http://localhost:3000',
     'https://guanacell-frontend-rj14myszz-dynarts-projects.vercel.app/'
-  ],
+    ];
+    console.log('CORS - Origin recibido:', origin); // Debug
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
+
 
 
 app.use(express.json())
