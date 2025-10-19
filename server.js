@@ -10,7 +10,7 @@ app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
        'http://localhost:3000',
-    'https://guanacell-frontend-rj14myszz-dynarts-projects.vercel.app/'
+    'https://guanacell-frontend-oxb9e7fia-dynarts-projects.vercel.app/'
     ];
     console.log('CORS - Origin recibido:', origin); // Debug
     if (!origin || allowedOrigins.includes(origin)) {
