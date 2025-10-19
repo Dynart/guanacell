@@ -9,13 +9,16 @@ const app = express();
 app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
-       'http://localhost:3000',
-    'https://guanacell-frontend-1j7hpo0zj-dynarts-projects.vercel.app/'
+      'http://localhost:3000',
+      'https://guanacell-frontend-1j7hpo0zj-dynarts-projects.vercel.app',
+      'https://guanacell-frontend.vercel.app'  // Por si usas un dominio personalizado
     ];
-    console.log('CORS - Origin recibido:', origin); // Debug
+    console.log('CORS - Origin recibido:', origin);
     if (!origin || allowedOrigins.includes(origin)) {
+      console.log('CORS - Origen permitido:', origin);
       callback(null, true);
     } else {
+      console.error('CORS - Origen no permitido:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -25,6 +28,7 @@ app.use(cors({
   preflightContinue: false,
   optionsSuccessStatus: 204
 }));
+
 
 
 
