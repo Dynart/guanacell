@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://guanacell-frontend-b0hzdt6g7-dynarts-projects.vercel.app'
+    'https://guanacell-frontend-rj14myszz-dynarts-projects.vercel.app/'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
