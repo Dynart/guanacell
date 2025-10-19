@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://guanacell-frontend.vercel.app'],
+    origin: ['http://localhost:3000', 'guanacell-frontend-b0hzdt6g7-dynarts-projects.vercel.app'],
   credentials: true
 }));
 app.use(express.json())
