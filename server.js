@@ -45,6 +45,8 @@ mongoose.connect(process.env.MONGO_URI,
 app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/auth', require('./routes/authRoutes'));
 
+app.use('/api/todos', require('./routes/todoRoutes'));
+
 const PORT = process.env.PORT || 5000 ;
 
 app.listen(PORT, () => console.log(`Servidor On Port ${PORT}`));
