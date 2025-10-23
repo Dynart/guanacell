@@ -9,7 +9,7 @@ router.get('/', auth, todoController.getTodos);
 router.get('/completed', auth, todoController.completedTodo);
 router.get('/users', auth, todoController.getUsers);
 router.post('/', auth, todoController.createTodo);
-router.put('/:id', [auth, admin], todoController.updateTodo);
+router.put('/:id', auth, todoController.updateTodo);
 router.delete('/:id', [auth, admin], todoController.deleteTodo);
 
 module.exports = router;
